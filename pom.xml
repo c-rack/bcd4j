@@ -8,11 +8,19 @@
 	<version>1.0.0</version>
 	<description>Binary Coded Decimals (BCD) for Java</description>
 	<url>http://www.bcd4j.org/</url>
+	<distributionManagement>
+		<site>
+			<url>https://code.google.com/p/bcd4j/</url>
+		</site>
+	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>
 			UTF-8
 		</project.build.sourceEncoding>
 	</properties>
+	<issueManagement>
+		<url>https://code.google.com/p/bcd4j/issues/list</url>
+	</issueManagement>
 	<developers>
 		<developer>
 			<id>crack</id>
@@ -25,6 +33,11 @@
 			</roles>
 		</developer>
 	</developers>
+	<scm>
+		<connection>scm:svn:http://bcd4j.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://bcd4j.googlecode.com/svn/trunk/</developerConnection>
+		<url>https://code.google.com/p/bcd4j/source/browse/</url>
+	</scm>
 	<organization>
 		<name>VIGOS AG</name>
 		<url>http://www.vigos.com/</url>
