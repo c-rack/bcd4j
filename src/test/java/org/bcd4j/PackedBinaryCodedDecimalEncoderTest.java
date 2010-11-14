@@ -38,35 +38,35 @@ public class PackedBinaryCodedDecimalEncoderTest {
     
     
     /** The packed bcd encoder. */
-    private transient PackedBinaryCodedDecimalEncoder packedBcdEncoder;
+    private transient PackedEncoder packedBcdEncoder;
 
     /**
      * Create a new PackedBcdEncoder before each test.
      */
     @Before
     public void before() {
-        packedBcdEncoder = new PackedBinaryCodedDecimalEncoder(0);
+        packedBcdEncoder = new PackedEncoder(0);
     }
 
     /**
-     * Test method for {@link org.bcd4j.PackedBinaryCodedDecimalEncoder#PackedBcdEncoder(int)}.
+     * Test method for {@link org.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
      */
     @Test
     public void testConstructor() {
-        packedBcdEncoder = new PackedBinaryCodedDecimalEncoder(123);
+        packedBcdEncoder = new PackedEncoder(123);
         assertEquals(123, packedBcdEncoder.getPadding());
     }
 
     /**
-     * Test method for {@link org.bcd4j.PackedBinaryCodedDecimalEncoder#PackedBcdEncoder(int)}.
+     * Test method for {@link org.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testConstructor2() {
-        packedBcdEncoder = new PackedBinaryCodedDecimalEncoder(-123);
+        packedBcdEncoder = new PackedEncoder(-123);
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(long)}.
+     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
      */
     @Test
     public void testEncodeLong() {
@@ -94,7 +94,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(long)}.
+     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testEncodeLongDoesNotAllowNegativeValues() {
@@ -103,7 +103,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
 
     /**
      * Test method for
-     * {@link org.bcd4j.PackedBinaryCodedDecimalEncoder#encode(java.math.BigInteger)}.
+     * {@link org.bcd4j.PackedEncoder#encode(java.math.BigInteger)}.
      */
     @Test
     public void testEncodeBigInteger() {

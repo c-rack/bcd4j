@@ -20,7 +20,7 @@ import java.math.BigInteger;
 /**
  * Base class for all BCD decoders.
  */
-abstract class AbstractBinaryCodedDecimalDecoder {
+abstract class AbstractDecoder {
 
     /** Minimal allowed byte value. */
     private static final byte MIN_BYTE_VALUE = 0;
@@ -47,7 +47,7 @@ abstract class AbstractBinaryCodedDecimalDecoder {
     }
 
     /**
-     * Checks if byteValue is valid.
+     * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
      * 
      * @param byteValue the byte to check.
      */

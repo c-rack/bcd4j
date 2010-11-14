@@ -15,6 +15,6 @@
  */
 
 /**
- * This library implements binary-coded decimals  (BCD and PackedBCD) in Java.
+ * This library implements binary-coded decimals (BCD and PackedBCD) in Java.
  */
 package org.bcd4j;

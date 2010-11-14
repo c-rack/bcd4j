@@ -37,27 +37,27 @@ public class BinaryCodedDecimalEncoderTest {
     private final static BigInteger i1234 = BigInteger.valueOf(1234);
     
     /** The bcd encoder. */
-    private transient BinaryCodedDecimalEncoder bcdEncoder;
+    private transient Encoder bcdEncoder;
 
     /**
      * Before.
      */
     @Before
     public void before() {
-        bcdEncoder = new BinaryCodedDecimalEncoder(0);
+        bcdEncoder = new Encoder(0);
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#BcdEncoder(int)}.
+     * Test method for {@link org.bcd4j.Encoder#BcdEncoder(int)}.
      */
     @Test
     public void testConstructor() {
-        bcdEncoder = new BinaryCodedDecimalEncoder(123);
+        bcdEncoder = new Encoder(123);
         assertEquals(123, bcdEncoder.getPadding());
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(long)}.
+     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
      */
     @Test
     public void testEncodeLong() {
@@ -70,7 +70,7 @@ public class BinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#setPadding(int)}.
+     * Test method for {@link org.bcd4j.Encoder#setPadding(int)}.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testSetPaddingNegative() {
@@ -78,7 +78,7 @@ public class BinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#setPadding(int)}.
+     * Test method for {@link org.bcd4j.Encoder#setPadding(int)}.
      */
     @Test
     public void testSetPadding() {
@@ -96,7 +96,7 @@ public class BinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(long)}.
+     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testEncodeLongWithTooSmallPadding() {
@@ -105,7 +105,7 @@ public class BinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(long)}.
+     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testEncodeLongDoesNotAllowNegativeValues() {
@@ -114,7 +114,7 @@ public class BinaryCodedDecimalEncoderTest {
 
     /**
      * Test method for
-     * {@link org.bcd4j.BinaryCodedDecimalEncoder#encode(java.math.BigInteger)}.
+     * {@link org.bcd4j.Encoder#encode(java.math.BigInteger)}.
      */
     @Test
     public void testEncodeBigInteger() {

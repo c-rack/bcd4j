@@ -5,7 +5,7 @@
 	<groupId>org</groupId>
 	<artifactId>bcd4j</artifactId>
 	<name>BCD4J</name>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>Binary Coded Decimals (BCD) for Java</description>
 	<url>http://www.bcd4j.org/</url>
 	<distributionManagement>
@@ -103,14 +103,6 @@
 			<url>http://download.java.net/maven/2/</url>
 			<layout>default</layout>
 		</repository>
-		<!-- 
-		<repository>
-			<id>mvnrepository.com</id>
-			<name>mvnrepository.com</name>
-			<url>http://mvnrepository.com/</url>
-			<layout>default</layout>
-		</repository>
-		-->
 	</repositories>
 	<dependencies>
 		<dependency>

@@ -20,7 +20,7 @@ import java.math.BigInteger;
 /**
  * Abstract base class for all BCD encoders.
  */
-abstract class AbstractBinaryCodedDecimalEncoder {
+abstract class AbstractEncoder {
 
     /**
      * The number of digits / bytes of the encoded result.
@@ -37,7 +37,7 @@ abstract class AbstractBinaryCodedDecimalEncoder {
 
     /**
      * Encodes a value to its BCD representation. Uses left zero padding if
-     * padding is set by {@link BinaryCodedDecimalEncoder#setPadding(int)}.
+     * padding is set by {@link Encoder#setPadding(int)}.
      *
      * @param value the value to be encoded
      * @return byte array with the BCD representation of value

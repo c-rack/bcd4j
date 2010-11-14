@@ -21,29 +21,24 @@ import java.util.Arrays;
 /**
  * Encodes a number to its BCD (binary coded digit) representation.
  */
-class BinaryCodedDecimalEncoder extends AbstractBinaryCodedDecimalEncoder {
+class Encoder extends AbstractEncoder {
 
     /**
      * Constructor.
-     *
      * @param paddingDigits number of digits in encoded byte array
      */
-    public BinaryCodedDecimalEncoder(final int paddingDigits) {
+    public Encoder(final int paddingDigits) {
         setPadding(paddingDigits);
     }
 
-    /**
-     * Encodes a value to its BCD representation. Uses left zero padding if
-     * padding is set by {@link AbstractBinaryCodedDecimalEncoder#setPadding(int)}.
-     *
-     * @param value the value to be encoded
-     * @return byte array with the BCD representation of value
+    /* (non-Javadoc)
+     * @see org.bcd4j.AbstractEncoder#encode(BigInteger)
      */
     @Override
     public final byte[] encode(final BigInteger value) {
-        char[] digits = encodeBigInteger2Digits(value);
-        byte[] bcd = allocate(digits.length);
-        encodeDigits2Bcd(digits, bcd);
+        char[] digits = encodeBigIntegerToDigits(value);
+        byte[] bcd = allocateByteArray(digits.length);
+        encodeDigitsToBcd(digits, bcd);
         return bcd;
     }
 
@@ -52,7 +47,7 @@ class BinaryCodedDecimalEncoder extends AbstractBinaryCodedDecimalEncoder {
      * @param value
      * @return
      */
-    private char[] encodeBigInteger2Digits(final BigInteger value) {
+    private char[] encodeBigIntegerToDigits(final BigInteger value) {
         checkValue(value);
         char[] digits = value.toString().toCharArray();
         checkPadding(digits.length);
@@ -84,7 +79,7 @@ class BinaryCodedDecimalEncoder extends AbstractBinaryCodedDecimalEncoder {
      * @param size
      * @return
      */
-    private byte[] allocate(final int size) {
+    private byte[] allocateByteArray(final int size) {
         byte[] bcd = new byte[Math.max(getPadding(), size)];
         Arrays.fill(bcd, (byte) 0);
         return bcd;
@@ -95,7 +90,7 @@ class BinaryCodedDecimalEncoder extends AbstractBinaryCodedDecimalEncoder {
      * @param digits
      * @param bcd
      */
-    private void encodeDigits2Bcd(final char[] digits, final byte[] bcd) {
+    private void encodeDigitsToBcd(final char[] digits, final byte[] bcd) {
         for (int i = 1; i <= digits.length; i++) {
             bcd[bcd.length - i] = (byte) (digits[digits.length - i] - '0');
         }

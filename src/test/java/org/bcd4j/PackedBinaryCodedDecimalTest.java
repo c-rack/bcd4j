@@ -29,18 +29,18 @@ import org.junit.Test;
 public class PackedBinaryCodedDecimalTest {
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decodeAsString(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test
     public void testEncodeDecode() {
         BigInteger original;
-        PackedBinaryCodedDecimal a;
-        PackedBinaryCodedDecimal b;
+        PackedBCD a;
+        PackedBCD b;
         
         for(long i = 0; i < 1000000; i++) {
             original = BigInteger.valueOf(i);
-            a = new PackedBinaryCodedDecimal(original);
-            b = new PackedBinaryCodedDecimal(a.toByteArray());
+            a = new PackedBCD(original);
+            b = new PackedBCD(a.toByteArray());
             assertEquals(original, b.toBigInteger());
         }
     }

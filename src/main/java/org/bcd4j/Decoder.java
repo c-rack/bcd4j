@@ -16,44 +16,37 @@
 package org.bcd4j;
 
 /**
- * The Class PackedBcdDecoder.
+ * Decodes a BCD encoded byte array to {@link java.math.BigInteger}.
  */
-class PackedBinaryCodedDecimalDecoder
-    extends AbstractBinaryCodedDecimalDecoder {
-
-    /** Number of bits to shift left to produce packed BCD format. */
-    static final int BIT_SHIFT = 4;
-
-    /** Bit mask to get only the lowest four bits. */
-    static final int BIT_MASK = 0x0F;
-
+class Decoder extends AbstractDecoder {
+    
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractBcdDecoder#decodeAsString(byte[])
+     * @see org.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */
     @Override
     protected final String decodeAsString(final byte[] bytes) {
-        final char[] chars = new char[bytes.length << 1];
+        char[] chars = new char[bytes.length];
         decodeBytes(bytes, chars);
         return String.valueOf(chars);
     }
 
     /**
-     *
-     * @param bytes
+     * Decodes a BCD encoded byte array to char array.
+     * 
+     * @param bytes the byte array to decode.
      */
     private void decodeBytes(final byte[] bytes, final char[] chars) {
-        int i = 0;
-        for (byte value : bytes) {
-            chars[i++] = decodeByte((byte) ((value >> BIT_SHIFT) & BIT_MASK));
-            chars[i++] = decodeByte((byte) (value & BIT_MASK));
+        for (int index = 0; index < bytes.length; index++) {
+            chars[index] = decodeByte(bytes[index]);
         }
     }
 
     /**
+     * Converts a BCD encoded byte to char.
      * 
-     * @param byteValue
+     * @param byteValue the byte to convert.
      */
-    private char decodeByte(byte byteValue) {
+    private char decodeByte(final byte byteValue) {
         checkByteValue(byteValue);
         return (char) ('0' + byteValue);
     }

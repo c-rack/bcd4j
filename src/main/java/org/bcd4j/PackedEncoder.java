@@ -18,29 +18,27 @@ package org.bcd4j;
 import java.math.BigInteger;
 
 /**
- * The Class PackedBcdEncoder.
+ * The Class PackedEncoder.
  */
-class PackedBinaryCodedDecimalEncoder extends
-    AbstractBinaryCodedDecimalEncoder {
+class PackedEncoder extends AbstractEncoder {
 
     /** Number of bits to shift left to produce packed BCD format. */
     static final int BIT_SHIFT = 4;
     
     /**
-     * Constructor.
-     *
+     * Constructs an PackedBCD encoder.
      * @param paddingDigits number of digits in encoded byte array.
      */
-    public PackedBinaryCodedDecimalEncoder(final int paddingDigits) {
+    public PackedEncoder(final int paddingDigits) {
         setPadding(paddingDigits);
     }
 
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractBinaryCodedDecimalsEncoder#encode(java.math.BigInteger)
+     * @see org.bcd4j.AbstractEncoder#encode(java.math.BigInteger)
      */
     @Override
     public final byte[] encode(final BigInteger value) {
-        byte[] bcd = new BinaryCodedDecimalEncoder(getPadding()).encode(value);
+        byte[] bcd = new Encoder(getPadding()).encode(value);
         byte[] packedBcd = new byte[(bcd.length >> 1) + (bcd.length & 1)];
         pack(bcd, packedBcd);
         return packedBcd;

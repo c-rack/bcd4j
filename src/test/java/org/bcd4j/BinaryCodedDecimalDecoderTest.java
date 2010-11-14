@@ -30,18 +30,18 @@ import org.junit.Test;
 public class BinaryCodedDecimalDecoderTest {
 
     /** The bcd decoder. */
-    private transient BinaryCodedDecimalDecoder bcdDecoder;
+    private transient Decoder bcdDecoder;
 
     /**
      * Before.
      */
     @Before
     public void before() {
-        bcdDecoder = new BinaryCodedDecimalDecoder();
+        bcdDecoder = new Decoder();
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decodeAsString(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test
     public void testDecodeAsString() {
@@ -60,7 +60,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
     
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decodeAsString(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument() {
@@ -68,7 +68,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
     
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decodeAsString(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument2() {
@@ -76,7 +76,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decode(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
      */
     @Test
     public void testDecode() {
@@ -95,7 +95,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.BinaryCodedDecimalDecoder#decode(byte[])}.
+     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeWithIllegalArgument() {
