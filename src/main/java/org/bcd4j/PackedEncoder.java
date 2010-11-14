@@ -45,16 +45,6 @@ class PackedEncoder extends AbstractEncoder {
     }
 
     /**
-     * Pad if number of bytes is odd.
-     */
-    private int alignFirstByte(final byte[] bcd, final byte[] packedBcd) {
-        if ((bcd.length & 1) == 1) {
-            packedBcd[0] = bcd[0];
-        }
-        return (bcd.length & 1);
-    }
-
-    /**
      * Pack two each bytes in one byte of the result array.
      */
     private void pack(final byte[] bcd, final byte[] packedBcd) {
@@ -62,6 +52,16 @@ class PackedEncoder extends AbstractEncoder {
         for (int j = i; j < bcd.length; j += 2) {
             packedBcd[i++] = (byte) ((bcd[j] << BIT_SHIFT) | bcd[j + 1]);
         }
+    }
+    
+    /**
+     * Pad if number of bytes is odd.
+     */
+    private int alignFirstByte(final byte[] bcd, final byte[] packedBcd) {
+        if ((bcd.length & 1) == 1) {
+            packedBcd[0] = bcd[0];
+        }
+        return (bcd.length & 1);
     }
     
 }

@@ -32,7 +32,6 @@ class Decoder extends AbstractDecoder {
 
     /**
      * Decodes a BCD encoded byte array to char array.
-     * 
      * @param bytes the byte array to decode.
      */
     private void decodeBytes(final byte[] bytes, final char[] chars) {
@@ -43,7 +42,6 @@ class Decoder extends AbstractDecoder {
 
     /**
      * Converts a BCD encoded byte to char.
-     * 
      * @param byteValue the byte to convert.
      */
     private char decodeByte(final byte byteValue) {

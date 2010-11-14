@@ -65,7 +65,7 @@ class Encoder extends AbstractEncoder {
     }
 
     /**
-     * 
+     * Verifies if padding is valid.
      * @param numberOfDigits
      */
     private void checkPadding(final int numberOfDigits) {
@@ -75,7 +75,7 @@ class Encoder extends AbstractEncoder {
     }
 
     /**
-     * 
+     * Allocates a byte array and fills it with zeros.
      * @param size
      * @return
      */
@@ -86,9 +86,9 @@ class Encoder extends AbstractEncoder {
     }
 
     /**
-     * 
-     * @param digits
-     * @param bcd
+     * Converts digits encoded as chars to a BCD encoded byte array.
+     * @param digits the char array to be encoded
+     * @param bcd the target byte array
      */
     private void encodeDigitsToBcd(final char[] digits, final byte[] bcd) {
         for (int i = 1; i <= digits.length; i++) {

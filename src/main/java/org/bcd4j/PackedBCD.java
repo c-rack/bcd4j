@@ -17,6 +17,11 @@ package org.bcd4j;
 
 import java.math.BigInteger;
 
+/**
+ * Represents a Packed Binary Coded Decimal (BCD).
+ *
+ * @author Constantin Rack
+ */
 public final class PackedBCD extends AbstractBCD {
 
     /**
