@@ -42,6 +42,16 @@ public final class PackedBCD extends AbstractBCD {
         super(value);
     }
 
+    /**
+     * Constructs a PackedBCD from a {@link java.math.BigInteger} with padding.
+     * 
+     * @param value the BigInteger.
+     * @param padding total number of digits of this BCD.
+     */
+    public PackedBCD(final BigInteger value, final int padding) {
+        super(value, padding);
+    }
+
     /* (non-Javadoc)
      * @see org.bcd4j.AbstractBCD#getDecoder()
      */
