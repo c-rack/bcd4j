@@ -32,6 +32,7 @@ class PackedDecoder extends AbstractDecoder {
     @Override
     protected final String decodeAsString(final byte[] bytes) {
         chars = new char[bytes.length << 1];
+        index = 0;
         decodeBytes(bytes);
         return String.valueOf(chars);
     }
@@ -41,20 +42,10 @@ class PackedDecoder extends AbstractDecoder {
      * @param bytes the byte array to decode
      */
     private void decodeBytes(final byte[] bytes) {
-        int index = 0;
         for (byte value : bytes) {
-            chars[index++] = decodeByte((byte) (value >> BIT_SHIFT));
-            chars[index++] = decodeByte((byte) (value));
+            chars[index++] = byteAsChar(BIT_MASK & (value >> BIT_SHIFT));
+            chars[index++] = byteAsChar(BIT_MASK & value);
         }
-    }
-
-    /**
-     * Returns the char representation of a BCD byte.
-     * @param byteValue the BCD byte to decode.
-     */
-    private char decodeByte(final byte byteValue) {
-        checkByteValue((byte)(byteValue & BIT_MASK));
-        return (char) ('0' + (byteValue & BIT_MASK));
     }
 
 }

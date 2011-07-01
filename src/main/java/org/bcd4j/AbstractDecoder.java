@@ -23,13 +23,16 @@ import java.math.BigInteger;
 abstract class AbstractDecoder {
 
     /** Minimal allowed byte value. */
-    private static final byte MIN_BYTE_VALUE = 0;
+    private static final int MIN_BYTE_VALUE = 0;
 
     /** Maximal allowed byte value. */
-    private static final byte MAX_BYTE_VALUE = 9;
+    private static final int MAX_BYTE_VALUE = 9;
 
     /** Temporary char array */
     protected char [] chars;
+    
+    /** Write index of temporary char array */
+    protected int index;
     
     /**
      * Decode a BCD byte array as {@link java.lang.String}.
@@ -43,15 +46,25 @@ abstract class AbstractDecoder {
      * @param bytes the bytes
      * @return the decoded value as big integer
      */
-    public final BigInteger decode(final byte[] bytes) {
+    protected final BigInteger decode(final byte[] bytes) {
         return new BigInteger(decodeAsString(bytes));
     }
 
     /**
+     * Validate and convert a byte value to char.
+     * @param byteValue the byte to convert
+     * @return the byte value as char
+     */
+    protected final char byteAsChar(final int byteValue) {
+        checkByteValue(byteValue);
+        return (char) ('0' + byteValue);
+    }
+    
+    /**
      * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
      * @param byteValue the byte to check.
      */
-    protected final void checkByteValue(final byte byteValue) {
+    private final void checkByteValue(final int byteValue) {
         if ((byteValue < MIN_BYTE_VALUE) || (byteValue > MAX_BYTE_VALUE)) {
             throw new IllegalArgumentException("byte value out of range");
         }

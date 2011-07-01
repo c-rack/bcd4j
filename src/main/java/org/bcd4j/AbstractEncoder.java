@@ -42,7 +42,6 @@ abstract class AbstractEncoder {
     /**
      * Encodes a value to its BCD representation. Uses left zero padding if
      * padding is set by {@link Encoder#setPadding(int)}.
-     *
      * @param value the value to be encoded
      * @return byte array with the BCD representation of value
      */
@@ -51,7 +50,6 @@ abstract class AbstractEncoder {
     /**
      * Use this to automatically add zeros in front of the value during
      * encoding to get the desired number of bytes.
-     *
      * @param paddingDigits
      *                number of digits in encoded byte array. If 0 (default),
      *                padding is off.
@@ -62,7 +60,7 @@ abstract class AbstractEncoder {
     }
 
     /**
-     * 
+     * Throws an exception if padding is negative.
      * @param paddingDigits
      */
     private void paddingMustNotBeNegative(final int paddingDigits) {

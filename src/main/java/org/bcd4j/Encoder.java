@@ -44,9 +44,8 @@ class Encoder extends AbstractEncoder {
     }
 
     /**
-     * 
-     * @param value
-     * @return
+     * Converts a BigInteger value to char array.
+     * @param value the BigInteger value
      */
     private void encodeBigIntegerToDigits(final BigInteger value) {
         checkValue(value);
@@ -65,7 +64,7 @@ class Encoder extends AbstractEncoder {
     }
 
     /**
-     * Verifies if padding is valid.
+     * Throws an exception if padding is invalid.
      * @param numberOfDigits
      */
     private void checkPadding(final int numberOfDigits) {

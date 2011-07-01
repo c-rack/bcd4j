@@ -26,6 +26,7 @@ class Decoder extends AbstractDecoder {
     @Override
     protected final String decodeAsString(final byte[] bytes) {
         chars = new char[bytes.length];
+        index = 0;
         decodeBytes(bytes);
         return String.valueOf(chars);
     }
@@ -35,18 +36,9 @@ class Decoder extends AbstractDecoder {
      * @param bytes the byte array to decode.
      */
     private void decodeBytes(final byte[] bytes) {
-        for (int i = 0; i < bytes.length; i++) {
-            chars[i] = decodeByte(bytes[i]);
+        for (byte value : bytes) {
+            chars[index++] = byteAsChar(value);
         }
-    }
-
-    /**
-     * Converts a BCD encoded byte to a char.
-     * @param byteValue the byte to convert.
-     */
-    private char decodeByte(final byte byteValue) {
-        checkByteValue(byteValue);
-        return (char) ('0' + byteValue);
     }
 
 }

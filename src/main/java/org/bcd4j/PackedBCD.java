@@ -41,7 +41,6 @@ public final class PackedBCD extends AbstractBCD {
 
     /**
      * Constructs a PackedBCD from a {@link java.math.BigInteger} with padding.
-     * 
      * @param value the BigInteger.
      * @param padding total number of digits of this BCD.
      */
