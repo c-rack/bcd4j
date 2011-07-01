@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,15 @@ import java.math.BigInteger;
  */
 abstract class AbstractEncoder {
 
-    /**
-     * The number of digits / bytes of the encoded result.
-     */
+    /** The number of digits / bytes of the encoded result. */
     private transient int padding = 0;
 
+    /** Temporary byte array */
+    protected byte [] bcd;
+    
+    /** Temporary char array */
+    protected char [] digits;
+    
     /**
      * Getter method for padding.
      * @return the number of digits / bytes of the encoded result.
@@ -42,7 +46,7 @@ abstract class AbstractEncoder {
      * @param value the value to be encoded
      * @return byte array with the BCD representation of value
      */
-    public abstract byte[] encode(final BigInteger value);
+    protected abstract byte[] encode(final BigInteger value);
 
     /**
      * Use this to automatically add zeros in front of the value during
@@ -52,7 +56,7 @@ abstract class AbstractEncoder {
      *                number of digits in encoded byte array. If 0 (default),
      *                padding is off.
      */
-    public final void setPadding(final int paddingDigits) {
+    protected final void setPadding(final int paddingDigits) {
         paddingMustNotBeNegative(paddingDigits);
         padding = paddingDigits;
     }

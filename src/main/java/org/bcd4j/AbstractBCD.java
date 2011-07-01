@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,23 +23,23 @@ import java.math.BigInteger;
 abstract class AbstractBCD {
 
     /** The BCD encoded byte array */
-    private byte[] byteArray;
+    private final byte[] byteArray;
     
     /** The BigInteger value of this decimal */
-    private BigInteger bigInteger;
+    private final BigInteger bigInteger;
 
     /**
      * Constructor for encoded byte array.
-     * @param value
+     * @param value the value of this BCD as encoded as byte array.
      */
     public AbstractBCD(final byte[] value) {
-        byteArray = value;
+        byteArray = value.clone();
         bigInteger = getDecoder().decode(byteArray);
     }
 
     /**
      * Constructor for BigInteger.
-     * @param value
+     * @param value the value of this BCD as {@link java.math.BigInteger}.
      */
     public AbstractBCD(final BigInteger value) {
         bigInteger = value;
@@ -48,8 +48,8 @@ abstract class AbstractBCD {
 
     /**
      * Constructor with padding.
-     * @param value
-     * @param padding
+     * @param value the value of this BCD as {@link java.math.BigInteger}.
+     * @param padding the padding to use for this BCD.
      */
     public AbstractBCD(final BigInteger value, final int padding) {
         bigInteger = value;
@@ -58,7 +58,7 @@ abstract class AbstractBCD {
 
     /**
      * Returns the BigInteger representation of this binary coded decimal.
-     * @return the BigInteger
+     * @return a {@link java.math.BigInteger} with the value of this BCD.
      */
     public final BigInteger toBigInteger() {
         return bigInteger;
@@ -66,24 +66,22 @@ abstract class AbstractBCD {
 
     /**
      * Returns the byte representation of this binary coded decimal.
-     * @return the byte array
+     * @return a byte array representing this BCD in encoded form.
      */
     public final byte[] toByteArray() {
-        byte [] resultByteArray = new byte[byteArray.length];
-        System.arraycopy(byteArray, 0, resultByteArray, 0, byteArray.length);
-        return resultByteArray;
+        return byteArray.clone();
     }
 
     /**
      * Factory method to get a decoder.
-     * @return a decoder
+     * @return an {@link org.bcd4j.AbstractDecoder} for this BCD.
      */
-    abstract AbstractDecoder getDecoder();
+    protected abstract AbstractDecoder getDecoder();
 
     /**
      * Factory method to get an encoder.
-     * @return an encoder
+     * @return an {@link org.bcd4j.AbstractEncoder} for this BCD.
      */
-    abstract AbstractEncoder getEncoder(final int padding);
+    protected abstract AbstractEncoder getEncoder(final int padding);
 
 }

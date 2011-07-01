@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,23 +25,23 @@ class Decoder extends AbstractDecoder {
      */
     @Override
     protected final String decodeAsString(final byte[] bytes) {
-        char[] chars = new char[bytes.length];
-        decodeBytes(bytes, chars);
+        chars = new char[bytes.length];
+        decodeBytes(bytes);
         return String.valueOf(chars);
     }
 
     /**
-     * Decodes a BCD encoded byte array to char array.
+     * Decodes a BCD encoded byte array to a char array.
      * @param bytes the byte array to decode.
      */
-    private void decodeBytes(final byte[] bytes, final char[] chars) {
-        for (int index = 0; index < bytes.length; index++) {
-            chars[index] = decodeByte(bytes[index]);
+    private void decodeBytes(final byte[] bytes) {
+        for (int i = 0; i < bytes.length; i++) {
+            chars[i] = decodeByte(bytes[i]);
         }
     }
 
     /**
-     * Converts a BCD encoded byte to char.
+     * Converts a BCD encoded byte to a char.
      * @param byteValue the byte to convert.
      */
     private char decodeByte(final byte byteValue) {

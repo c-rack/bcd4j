@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ abstract class AbstractDecoder {
     /** Maximal allowed byte value. */
     private static final byte MAX_BYTE_VALUE = 9;
 
+    /** Temporary char array */
+    protected char [] chars;
+    
     /**
      * Decode a BCD byte array as {@link java.lang.String}.
-     *
      * @param bytes the bytes
      * @return the decoded value as string
      */
@@ -38,7 +40,6 @@ abstract class AbstractDecoder {
 
     /**
      * Decode a BCD byte array as {@link java.math.BigInteger}.
-     *
      * @param bytes the bytes
      * @return the decoded value as big integer
      */
@@ -48,7 +49,6 @@ abstract class AbstractDecoder {
 
     /**
      * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
-     * 
      * @param byteValue the byte to check.
      */
     protected final void checkByteValue(final byte byteValue) {

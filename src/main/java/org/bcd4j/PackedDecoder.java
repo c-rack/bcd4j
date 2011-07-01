@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +21,18 @@ package org.bcd4j;
 class PackedDecoder extends AbstractDecoder {
 
     /** Number of bits to shift left to produce packed BCD format. */
-    static final int BIT_SHIFT = 4;
+    private static final int BIT_SHIFT = 4;
 
-    /** Bit mask to get only the lowest four bits. */
-    static final int BIT_MASK = 0x0F;
+    /** Bit mask to get only the lowest four bits of a byte. */
+    private static final byte BIT_MASK = 0x0F;
 
     /* (non-Javadoc)
      * @see org.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */
     @Override
     protected final String decodeAsString(final byte[] bytes) {
-        final char[] chars = new char[bytes.length << 1];
-        decodeBytes(bytes, chars);
+        chars = new char[bytes.length << 1];
+        decodeBytes(bytes);
         return String.valueOf(chars);
     }
 
@@ -40,11 +40,11 @@ class PackedDecoder extends AbstractDecoder {
      * Unpacks byte array values to char array.
      * @param bytes the byte array to decode
      */
-    private void decodeBytes(final byte[] bytes, final char[] chars) {
-        int i = 0;
+    private void decodeBytes(final byte[] bytes) {
+        int index = 0;
         for (byte value : bytes) {
-            chars[i++] = decodeByte((byte) (BIT_MASK & (value >> BIT_SHIFT)));
-            chars[i++] = decodeByte((byte) (BIT_MASK & value));
+            chars[index++] = decodeByte((byte) (value >> BIT_SHIFT));
+            chars[index++] = decodeByte((byte) (value));
         }
     }
 
@@ -52,9 +52,9 @@ class PackedDecoder extends AbstractDecoder {
      * Returns the char representation of a BCD byte.
      * @param byteValue the BCD byte to decode.
      */
-    private char decodeByte(byte byteValue) {
-        checkByteValue(byteValue);
-        return (char) ('0' + byteValue);
+    private char decodeByte(final byte byteValue) {
+        checkByteValue(BIT_MASK);
+        return (char) ('0' + (byteValue & BIT_MASK));
     }
 
 }

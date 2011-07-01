@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,17 @@ import java.math.BigInteger;
 class PackedEncoder extends AbstractEncoder {
 
     /** Number of bits to shift left to produce packed BCD format. */
-    static final int BIT_SHIFT = 4;
+    private static final int BIT_SHIFT = 4;
+    
+    /** Temporary byte array */
+    private transient byte [] packedBcd;
     
     /**
      * Constructs an PackedBCD encoder.
      * @param paddingDigits number of digits in encoded byte array.
      */
     public PackedEncoder(final int paddingDigits) {
+        super();
         setPadding(paddingDigits);
     }
 
@@ -37,27 +41,29 @@ class PackedEncoder extends AbstractEncoder {
      * @see org.bcd4j.AbstractEncoder#encode(java.math.BigInteger)
      */
     @Override
-    public final byte[] encode(final BigInteger value) {
-        byte[] bcd = new Encoder(getPadding()).encode(value);
-        byte[] packedBcd = new byte[(bcd.length >> 1) + (bcd.length & 1)];
-        pack(bcd, packedBcd);
-        return packedBcd;
+    protected final byte[] encode(final BigInteger value) {
+        bcd = new Encoder(getPadding()).encode(value);
+        packedBcd = new byte[(bcd.length >> 1) + (bcd.length & 1)];
+        pack();
+        return packedBcd.clone();
     }
 
     /**
      * Pack two each bytes in one byte of the result array.
      */
-    private void pack(final byte[] bcd, final byte[] packedBcd) {
-        int i = alignFirstByte(bcd, packedBcd);
-        for (int j = i; j < bcd.length; j += 2) {
-            packedBcd[i++] = (byte) ((bcd[j] << BIT_SHIFT) | bcd[j + 1]);
+    private void pack() {
+        for (int i = alignFirstByte(), j = i; j < bcd.length; j += 2) {
+            packedBcd[i] = (byte) (bcd[j] << BIT_SHIFT);
+            packedBcd[i++] |= (byte) bcd[j + 1];
         }
     }
     
     /**
      * Pad if number of bytes is odd.
+     * @param bcd the byte array to be packed.
+     * @param packedBcd the byte array to pack into.
      */
-    private int alignFirstByte(final byte[] bcd, final byte[] packedBcd) {
+    private int alignFirstByte() {
         if ((bcd.length & 1) == 1) {
             packedBcd[0] = bcd[0];
         }

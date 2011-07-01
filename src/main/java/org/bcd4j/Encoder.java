@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ class Encoder extends AbstractEncoder {
      * @param paddingDigits number of digits in encoded byte array
      */
     public Encoder(final int paddingDigits) {
+        super();
         setPadding(paddingDigits);
     }
 
@@ -36,9 +37,9 @@ class Encoder extends AbstractEncoder {
      */
     @Override
     public final byte[] encode(final BigInteger value) {
-        char[] digits = encodeBigIntegerToDigits(value);
-        byte[] bcd = allocateByteArray(digits.length);
-        encodeDigitsToBcd(digits, bcd);
+        encodeBigIntegerToDigits(value);
+        bcd = allocateByteArray(digits.length);
+        encodeDigitsToBcd();
         return bcd;
     }
 
@@ -47,16 +48,15 @@ class Encoder extends AbstractEncoder {
      * @param value
      * @return
      */
-    private char[] encodeBigIntegerToDigits(final BigInteger value) {
+    private void encodeBigIntegerToDigits(final BigInteger value) {
         checkValue(value);
-        char[] digits = value.toString().toCharArray();
+        digits = value.toString().toCharArray();
         checkPadding(digits.length);
-        return digits;
     }
 
     /**
-     * 
-     * @param value
+     * Verifies that value is not negative.
+     * @param value the value to be checked.
      */
     private void checkValue(final BigInteger value) {
         if (value.signum() == -1) {
@@ -76,11 +76,11 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Allocates a byte array and fills it with zeros.
-     * @param size
-     * @return
+     * @param size the size of the array
+     * @return a byte array filled with zeros.
      */
     private byte[] allocateByteArray(final int size) {
-        byte[] bcd = new byte[Math.max(getPadding(), size)];
+        bcd = new byte[Math.max(getPadding(), size)];
         Arrays.fill(bcd, (byte) 0);
         return bcd;
     }
@@ -90,7 +90,7 @@ class Encoder extends AbstractEncoder {
      * @param digits the char array to be encoded
      * @param bcd the target byte array
      */
-    private void encodeDigitsToBcd(final char[] digits, final byte[] bcd) {
+    private void encodeDigitsToBcd() {
         for (int i = 1; i <= digits.length; i++) {
             bcd[bcd.length - i] = (byte) (digits[digits.length - i] - '0');
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Constantin Rack.
+ * Copyright 2010-2011 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,12 @@ import java.math.BigInteger;
 
 /**
  * Represents a Packed Binary Coded Decimal (BCD).
- *
  * @author Constantin Rack
  */
 public final class PackedBCD extends AbstractBCD {
 
     /**
      * Constructs a PackedBCD from a byte array.
-     *
      * @param value the byte array
      */
     public PackedBCD(final byte[] value) {
@@ -35,7 +33,6 @@ public final class PackedBCD extends AbstractBCD {
 
     /**
      * Constructs a PackedBCD from a {@link java.math.BigInteger}.
-     * 
      * @param value the BigInteger.
      */
     public PackedBCD(final BigInteger value) {
