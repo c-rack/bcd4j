@@ -53,7 +53,7 @@ class PackedDecoder extends AbstractDecoder {
      * @param byteValue the BCD byte to decode.
      */
     private char decodeByte(final byte byteValue) {
-        checkByteValue(BIT_MASK);
+        checkByteValue((byte)(byteValue & BIT_MASK));
         return (char) ('0' + (byteValue & BIT_MASK));
     }
 
