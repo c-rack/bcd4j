@@ -27,6 +27,9 @@ abstract class AbstractBCD {
     
     /** The BigInteger value of this decimal */
     private final BigInteger bigInteger;
+    
+    /** The String value of this string */
+    private final String string;
 
     /**
      * Constructor for encoded byte array.
@@ -35,6 +38,7 @@ abstract class AbstractBCD {
     public AbstractBCD(final byte[] value) {
         byteArray = value.clone();
         bigInteger = getDecoder().decode(byteArray);
+        string=getDecoder().decodeAsString(byteArray);
     }
 
     /**
@@ -44,6 +48,7 @@ abstract class AbstractBCD {
     public AbstractBCD(final BigInteger value) {
         bigInteger = value;
         byteArray = getEncoder(0).encode(bigInteger);
+        string=getDecoder().decodeAsString(byteArray);
     }
 
     /**
@@ -54,6 +59,7 @@ abstract class AbstractBCD {
     public AbstractBCD(final BigInteger value, final int padding) {
         bigInteger = value;
         byteArray = getEncoder(padding).encode(bigInteger);
+        string=getDecoder().decodeAsString(byteArray);
     }
 
     /**
@@ -71,6 +77,12 @@ abstract class AbstractBCD {
     public final byte[] toByteArray() {
         return byteArray.clone();
     }
+    
+    
+    @Override
+   public String toString() {
+      return string;
+   }
 
     /**
      * Factory method to get a decoder.
