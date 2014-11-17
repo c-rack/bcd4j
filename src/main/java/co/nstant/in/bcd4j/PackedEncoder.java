@@ -24,10 +24,10 @@ class PackedEncoder extends AbstractEncoder {
 
     /** Number of bits to shift left to produce packed BCD format. */
     private static final int BIT_SHIFT = 4;
-    
+
     /** Temporary byte array */
-    private transient byte [] packedBcd;
-    
+    private transient byte[] packedBcd;
+
     /**
      * Constructs an PackedBCD encoder.
      * @param paddingDigits number of digits in encoded byte array.
@@ -57,7 +57,7 @@ class PackedEncoder extends AbstractEncoder {
             packedBcd[i++] |= (byte) bcd[j + 1];
         }
     }
-    
+
     /**
      * Pad if number of bytes is odd.
      * @param bcd the byte array to be packed.
@@ -69,5 +69,5 @@ class PackedEncoder extends AbstractEncoder {
         }
         return (bcd.length & 1);
     }
-    
+
 }

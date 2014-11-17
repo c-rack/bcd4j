@@ -18,3 +18,4 @@
  * This library implements binary-coded decimals (BCD and PackedBCD) in Java.
  */
 package co.nstant.in.bcd4j;
+

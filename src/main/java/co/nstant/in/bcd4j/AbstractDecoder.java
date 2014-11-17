@@ -29,11 +29,11 @@ abstract class AbstractDecoder {
     private static final int MAX_BYTE_VALUE = 9;
 
     /** Temporary char array */
-    protected char [] chars;
-    
+    protected char[] chars;
+
     /** Write index of temporary char array */
     protected int index;
-    
+
     /**
      * Decode a BCD byte array as {@link java.lang.String}.
      * @param bytes the bytes
@@ -59,7 +59,7 @@ abstract class AbstractDecoder {
         checkByteValue(byteValue);
         return (char) ('0' + byteValue);
     }
-    
+
     /**
      * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
      * @param byteValue the byte to check.
@@ -69,5 +69,5 @@ abstract class AbstractDecoder {
             throw new IllegalArgumentException("byte value out of range");
         }
     }
-    
+
 }

@@ -63,5 +63,5 @@ public final class BCD extends AbstractBCD {
     protected AbstractEncoder getEncoder(final int padding) {
         return new Encoder(padding);
     }
-    
+
 }

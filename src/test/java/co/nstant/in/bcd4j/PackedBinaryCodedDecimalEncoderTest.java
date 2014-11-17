@@ -37,8 +37,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     private final static BigInteger i12 = BigInteger.valueOf(12);
     private final static BigInteger i123 = BigInteger.valueOf(123);
     private final static BigInteger i1234 = BigInteger.valueOf(1234);
-    
-    
+
     /** The packed bcd encoder. */
     private transient PackedEncoder packedBcdEncoder;
 
@@ -62,7 +61,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     /**
      * Test method for {@link co.nstant.in.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testConstructor2() {
         packedBcdEncoder = new PackedEncoder(-123);
     }
@@ -73,26 +72,26 @@ public class PackedBinaryCodedDecimalEncoderTest {
     @Test
     public void testEncodeLong() {
         assertArrayEquals(new byte[] { 0x00 },
-                          packedBcdEncoder.encode(i0));
+                        packedBcdEncoder.encode(i0));
         assertArrayEquals(new byte[] { 0x01 },
-                          packedBcdEncoder.encode(i1));
+                        packedBcdEncoder.encode(i1));
         assertArrayEquals(new byte[] { 0x12 },
-                          packedBcdEncoder.encode(i12));
+                        packedBcdEncoder.encode(i12));
         assertArrayEquals(new byte[] { 0x01, 0x23 },
-                          packedBcdEncoder.encode(i123));
+                        packedBcdEncoder.encode(i123));
         assertArrayEquals(new byte[] { 0x12, 0x34 },
-                          packedBcdEncoder.encode(i1234));
-        
+                        packedBcdEncoder.encode(i1234));
+
         packedBcdEncoder.setPadding(4);
-        
+
         assertArrayEquals(new byte[] { 0x00, 0x01 },
-                          packedBcdEncoder.encode(i1));
+                        packedBcdEncoder.encode(i1));
         assertArrayEquals(new byte[] { 0x00, 0x12 },
-                          packedBcdEncoder.encode(i12));
+                        packedBcdEncoder.encode(i12));
         assertArrayEquals(new byte[] { 0x01, 0x23 },
-                          packedBcdEncoder.encode(i123));
+                        packedBcdEncoder.encode(i123));
         assertArrayEquals(new byte[] { 0x12, 0x34 },
-                          packedBcdEncoder.encode(i1234));
+                        packedBcdEncoder.encode(i1234));
     }
 
     /**
@@ -110,15 +109,15 @@ public class PackedBinaryCodedDecimalEncoderTest {
     @Test
     public void testEncodeBigInteger() {
         assertArrayEquals(new byte[] { 0x00 },
-                          packedBcdEncoder.encode(BigInteger.valueOf(0)));
+                        packedBcdEncoder.encode(BigInteger.valueOf(0)));
         assertArrayEquals(new byte[] { 0x01 },
-                          packedBcdEncoder.encode(BigInteger.valueOf(1)));
+                        packedBcdEncoder.encode(BigInteger.valueOf(1)));
         assertArrayEquals(new byte[] { 0x12 },
-                          packedBcdEncoder.encode(BigInteger.valueOf(12)));
+                        packedBcdEncoder.encode(BigInteger.valueOf(12)));
         assertArrayEquals(new byte[] { 0x01, 0x23 },
-                          packedBcdEncoder.encode(BigInteger.valueOf(123)));
+                        packedBcdEncoder.encode(BigInteger.valueOf(123)));
         assertArrayEquals(new byte[] { 0x12, 0x34 },
-                          packedBcdEncoder.encode(BigInteger.valueOf(1234)));
+                        packedBcdEncoder.encode(BigInteger.valueOf(1234)));
     }
 
 }

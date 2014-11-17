@@ -48,31 +48,31 @@ public class BinaryCodedDecimalDecoderTest {
     @Test
     public void testDecodeAsString() {
         assertEquals("0",
-                     bcdDecoder.decodeAsString(new byte[] { 0 }));
+                        bcdDecoder.decodeAsString(new byte[] { 0 }));
         assertEquals("1",
-                     bcdDecoder.decodeAsString(new byte[] { 1 }));
+                        bcdDecoder.decodeAsString(new byte[] { 1 }));
         assertEquals("12",
-                     bcdDecoder.decodeAsString(new byte[] { 1, 2 }));
+                        bcdDecoder.decodeAsString(new byte[] { 1, 2 }));
         assertEquals("123",
-                     bcdDecoder.decodeAsString(new byte[] { 1, 2, 3 }));
+                        bcdDecoder.decodeAsString(new byte[] { 1, 2, 3 }));
         assertEquals("1234",
-                     bcdDecoder.decodeAsString(new byte[] { 1, 2, 3, 4 }));
+                        bcdDecoder.decodeAsString(new byte[] { 1, 2, 3, 4 }));
         assertEquals("00123",
-                     bcdDecoder.decodeAsString(new byte[] { 0, 0, 1, 2, 3 }));
+                        bcdDecoder.decodeAsString(new byte[] { 0, 0, 1, 2, 3 }));
     }
-    
+
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument() {
         bcdDecoder.decodeAsString(new byte[] { 2, 4, 6, 8, 10, 12, 14 });
     }
-    
+
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument2() {
         bcdDecoder.decodeAsString(new byte[] { 2, 4, 6, 8, -1 });
     }
@@ -83,23 +83,23 @@ public class BinaryCodedDecimalDecoderTest {
     @Test
     public void testDecode() {
         assertEquals(BigInteger.valueOf(0),
-                     bcdDecoder.decode(new byte[] { 0 }));
+                        bcdDecoder.decode(new byte[] { 0 }));
         assertEquals(BigInteger.valueOf(1),
-                     bcdDecoder.decode(new byte[] { 1 }));
+                        bcdDecoder.decode(new byte[] { 1 }));
         assertEquals(BigInteger.valueOf(12),
-                     bcdDecoder.decode(new byte[] { 1, 2 }));
+                        bcdDecoder.decode(new byte[] { 1, 2 }));
         assertEquals(BigInteger.valueOf(123),
-                     bcdDecoder.decode(new byte[] { 1, 2, 3 }));
+                        bcdDecoder.decode(new byte[] { 1, 2, 3 }));
         assertEquals(BigInteger.valueOf(1234),
-                     bcdDecoder.decode(new byte[] { 1, 2, 3, 4 }));
+                        bcdDecoder.decode(new byte[] { 1, 2, 3, 4 }));
         assertEquals(BigInteger.valueOf(123),
-                     bcdDecoder.decode(new byte[] { 0, 0, 1, 2, 3 }));
+                        bcdDecoder.decode(new byte[] { 0, 0, 1, 2, 3 }));
     }
 
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeWithIllegalArgument() {
         bcdDecoder.decode(new byte[] { 2, 4, 6, 8, 10, 12, 14 });
     }

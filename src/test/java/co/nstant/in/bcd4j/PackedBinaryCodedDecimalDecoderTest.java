@@ -47,17 +47,17 @@ public class PackedBinaryCodedDecimalDecoderTest {
     @Test
     public void testDecodeAsString() {
         assertEquals("00",
-                     decoder.decodeAsString(new byte[] { 0x00 }));
+                        decoder.decodeAsString(new byte[] { 0x00 }));
         assertEquals("01",
-                     decoder.decodeAsString(new byte[] { 0x01 }));
+                        decoder.decodeAsString(new byte[] { 0x01 }));
         assertEquals("12",
-                     decoder.decodeAsString(new byte[] { 0x12 }));
+                        decoder.decodeAsString(new byte[] { 0x12 }));
         assertEquals("0123",
-                     decoder.decodeAsString(new byte[] { 0x01, 0x23 }));
+                        decoder.decodeAsString(new byte[] { 0x01, 0x23 }));
         assertEquals("1234",
-                     decoder.decodeAsString(new byte[] { 0x12, 0x34 }));
+                        decoder.decodeAsString(new byte[] { 0x12, 0x34 }));
         assertEquals("000123",
-                     decoder.decodeAsString(new byte[] { 0x00, 0x01, 0x23 }));
+                        decoder.decodeAsString(new byte[] { 0x00, 0x01, 0x23 }));
     }
 
     /**
@@ -66,23 +66,23 @@ public class PackedBinaryCodedDecimalDecoderTest {
     @Test
     public void testDecode() {
         assertEquals(BigInteger.valueOf(0),
-                     decoder.decode(new byte[] { 0x00 }));
-        assertEquals(BigInteger.valueOf(1), 
-                     decoder.decode(new byte[] { 0x01 }));
+                        decoder.decode(new byte[] { 0x00 }));
+        assertEquals(BigInteger.valueOf(1),
+                        decoder.decode(new byte[] { 0x01 }));
         assertEquals(BigInteger.valueOf(12),
-                     decoder.decode(new byte[] { 0x12 }));
+                        decoder.decode(new byte[] { 0x12 }));
         assertEquals(BigInteger.valueOf(123),
-                     decoder.decode(new byte[] { 0x01, 0x23 }));
+                        decoder.decode(new byte[] { 0x01, 0x23 }));
         assertEquals(BigInteger.valueOf(1234),
-                     decoder.decode(new byte[] { 0x12, 0x34 }));
+                        decoder.decode(new byte[] { 0x12, 0x34 }));
         assertEquals(BigInteger.valueOf(123),
-                     decoder.decode(new byte[] { 0x00, 0x01, 0x23 }));
+                        decoder.decode(new byte[] { 0x00, 0x01, 0x23 }));
     }
 
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues1() {
         decoder.decode(new byte[] { 0x0F });
     }
@@ -90,7 +90,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues2() {
         decoder.decode(new byte[] { (byte) 0xF0 });
     }
@@ -98,9 +98,9 @@ public class PackedBinaryCodedDecimalDecoderTest {
     /**
      * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues3() {
         decoder.decode(new byte[] { (byte) 0xFF });
     }
-    
+
 }

@@ -26,11 +26,11 @@ abstract class AbstractEncoder {
     private transient int padding = 0;
 
     /** Temporary byte array */
-    protected byte [] bcd;
-    
+    protected byte[] bcd;
+
     /** Temporary char array */
-    protected char [] digits;
-    
+    protected char[] digits;
+
     /**
      * Getter method for padding.
      * @return the number of digits / bytes of the encoded result.

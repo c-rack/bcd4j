@@ -19,7 +19,7 @@ package co.nstant.in.bcd4j;
  * Decodes a BCD encoded byte array to {@link java.math.BigInteger}.
  */
 class Decoder extends AbstractDecoder {
-    
+
     /* (non-Javadoc)
      * @see co.nstant.in.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */

@@ -38,13 +38,13 @@ public class BinaryCodedDecimalTest {
         BigInteger original;
         BCD a;
         BCD b;
-        
-        for(long i = 0; i < 1000000; i++) {
+
+        for (long i = 0; i < 1000000; i++) {
             original = BigInteger.valueOf(i);
             a = new BCD(original);
             b = new BCD(a.toByteArray());
             assertEquals(original, b.toBigInteger());
         }
     }
-    
+
 }
