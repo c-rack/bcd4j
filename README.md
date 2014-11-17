@@ -12,4 +12,4 @@ and
 [PackedBCD](https://github.com/c-rack/bcd4j/blob/master/src/main/java/org/bcd4j/PackedBCD.java).
 
 Internally, this library consists of 7 more private classes, as shown here:
-[![Architecture](https://github.com/c-rack/bcd4j/blob/master/design.png)]
+![Architecture](https://github.com/c-rack/bcd4j/blob/master/design.png)
