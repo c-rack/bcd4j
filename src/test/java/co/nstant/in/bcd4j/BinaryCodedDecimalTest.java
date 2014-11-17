@@ -21,8 +21,6 @@ import java.math.BigInteger;
 
 import org.junit.Test;
 
-import co.nstant.in.bcd4j.BCD;
-
 /**
  * The Class BinaryCodedDecimalTest.
  * 
@@ -42,6 +40,21 @@ public class BinaryCodedDecimalTest {
         for (long i = 0; i < 1000000; i++) {
             original = BigInteger.valueOf(i);
             a = new BCD(original);
+            b = new BCD(a.toByteArray());
+            assertEquals(original, b.toBigInteger());
+            assertEquals(String.valueOf(i), a.toString());
+        }
+    }
+
+    @Test
+    public void testEncodeDecodeWithPadding() {
+        BigInteger original;
+        BCD a;
+        BCD b;
+
+        for (long i = 0; i < 1000000; i++) {
+            original = BigInteger.valueOf(i);
+            a = new BCD(original, 8);
             b = new BCD(a.toByteArray());
             assertEquals(original, b.toBigInteger());
         }

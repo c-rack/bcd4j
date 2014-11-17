@@ -21,8 +21,6 @@ import java.math.BigInteger;
 
 import org.junit.Test;
 
-import co.nstant.in.bcd4j.PackedBCD;
-
 /**
  * The Class PackedBinaryCodedDecimalTest.
  * 
@@ -30,9 +28,6 @@ import co.nstant.in.bcd4j.PackedBCD;
  */
 public class PackedBinaryCodedDecimalTest {
 
-    /**
-     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
-     */
     @Test
     public void testEncodeDecode() {
         BigInteger original;
@@ -42,6 +37,20 @@ public class PackedBinaryCodedDecimalTest {
         for (long i = 0; i < 1000000; i++) {
             original = BigInteger.valueOf(i);
             a = new PackedBCD(original);
+            b = new PackedBCD(a.toByteArray());
+            assertEquals(original, b.toBigInteger());
+        }
+    }
+
+    @Test
+    public void testEncodeDecodeWithPadding() {
+        BigInteger original;
+        PackedBCD a;
+        PackedBCD b;
+
+        for (long i = 0; i < 1000000; i++) {
+            original = BigInteger.valueOf(i);
+            a = new PackedBCD(original, 8);
             b = new PackedBCD(a.toByteArray());
             assertEquals(original, b.toBigInteger());
         }
