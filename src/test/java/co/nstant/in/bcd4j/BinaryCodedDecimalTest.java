@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import static org.junit.Assert.assertEquals;
 
 import java.math.BigInteger;
 
 import org.junit.Test;
+
+import co.nstant.in.bcd4j.BCD;
 
 /**
  * The Class BinaryCodedDecimalTest.
@@ -29,7 +31,7 @@ import org.junit.Test;
 public class BinaryCodedDecimalTest {
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test
     public void testEncodeDecode() {

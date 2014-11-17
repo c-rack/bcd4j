@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 /**
  * The Class PackedDecoder.
@@ -27,7 +27,7 @@ class PackedDecoder extends AbstractDecoder {
     private static final byte BIT_MASK = 0x0F;
 
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractDecoder#decodeAsString(byte[])
+     * @see co.nstant.in.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */
     @Override
     protected final String decodeAsString(final byte[] bytes) {

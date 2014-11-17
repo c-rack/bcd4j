@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,8 @@ import java.math.BigInteger;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import co.nstant.in.bcd4j.Decoder;
 
 /**
  * The Class BinaryCodedDecimalDecoderTest.
@@ -41,7 +43,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test
     public void testDecodeAsString() {
@@ -60,7 +62,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
     
     /**
-     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument() {
@@ -68,7 +70,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
     
     /**
-     * Test method for {@link org.bcd4j.Decoder#decodeAsString(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument2() {
@@ -76,7 +78,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test
     public void testDecode() {
@@ -95,7 +97,7 @@ public class BinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeWithIllegalArgument() {

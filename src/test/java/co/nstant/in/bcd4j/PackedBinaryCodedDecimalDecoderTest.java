@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. 
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,8 @@ import java.math.BigInteger;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import co.nstant.in.bcd4j.PackedDecoder;
 
 /**
  * The Class PackedBinaryCodedDecimalDecoderTest.
@@ -40,7 +42,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
 
     /**
      * Test method for
-     * {@link org.bcd4j.PackedDecoder#decodeAsString(byte[])}.
+     * {@link co.nstant.in.bcd4j.PackedDecoder#decodeAsString(byte[])}.
      */
     @Test
     public void testDecodeAsString() {
@@ -59,7 +61,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test
     public void testDecode() {
@@ -78,7 +80,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeIllegalByteValues1() {
@@ -86,7 +88,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeIllegalByteValues2() {
@@ -94,7 +96,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Decoder#decode(byte[])}.
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decode(byte[])}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testDecodeIllegalByteValues3() {

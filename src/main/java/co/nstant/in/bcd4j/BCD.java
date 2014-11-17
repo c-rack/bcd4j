@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import java.math.BigInteger;
 
@@ -49,7 +49,7 @@ public final class BCD extends AbstractBCD {
     }
 
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractBCD#getDecoder()
+     * @see co.nstant.in.bcd4j.AbstractBCD#getDecoder()
      */
     @Override
     protected AbstractDecoder getDecoder() {
@@ -57,7 +57,7 @@ public final class BCD extends AbstractBCD {
     }
 
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractBCD#getEncoder(int)
+     * @see co.nstant.in.bcd4j.AbstractBCD#getEncoder(int)
      */
     @Override
     protected AbstractEncoder getEncoder(final int padding) {

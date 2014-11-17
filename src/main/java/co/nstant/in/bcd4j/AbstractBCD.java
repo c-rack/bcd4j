@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import java.math.BigInteger;
 
@@ -86,13 +86,13 @@ abstract class AbstractBCD {
 
     /**
      * Factory method to get a decoder.
-     * @return an {@link org.bcd4j.AbstractDecoder} for this BCD.
+     * @return an {@link co.nstant.in.bcd4j.AbstractDecoder} for this BCD.
      */
     protected abstract AbstractDecoder getDecoder();
 
     /**
      * Factory method to get an encoder.
-     * @return an {@link org.bcd4j.AbstractEncoder} for this BCD.
+     * @return an {@link co.nstant.in.bcd4j.AbstractEncoder} for this BCD.
      */
     protected abstract AbstractEncoder getEncoder(final int padding);
 

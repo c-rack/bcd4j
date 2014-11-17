@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -23,6 +23,8 @@ import java.math.BigInteger;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import co.nstant.in.bcd4j.PackedEncoder;
 
 /**
  * The Class PackedBinaryCodedDecimalEncoderTest.
@@ -49,7 +51,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
+     * Test method for {@link co.nstant.in.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
      */
     @Test
     public void testConstructor() {
@@ -58,7 +60,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
+     * Test method for {@link co.nstant.in.bcd4j.PackedEncoder#PackedBcdEncoder(int)}.
      */
     @Test(expected=IllegalArgumentException.class)
     public void testConstructor2() {
@@ -66,7 +68,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
+     * Test method for {@link co.nstant.in.bcd4j.Encoder#encode(long)}.
      */
     @Test
     public void testEncodeLong() {
@@ -94,7 +96,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
     }
 
     /**
-     * Test method for {@link org.bcd4j.Encoder#encode(long)}.
+     * Test method for {@link co.nstant.in.bcd4j.Encoder#encode(long)}.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testEncodeLongDoesNotAllowNegativeValues() {
@@ -103,7 +105,7 @@ public class PackedBinaryCodedDecimalEncoderTest {
 
     /**
      * Test method for
-     * {@link org.bcd4j.PackedEncoder#encode(java.math.BigInteger)}.
+     * {@link co.nstant.in.bcd4j.PackedEncoder#encode(java.math.BigInteger)}.
      */
     @Test
     public void testEncodeBigInteger() {

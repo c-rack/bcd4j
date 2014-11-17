@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bcd4j;
+package co.nstant.in.bcd4j;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -33,7 +33,7 @@ class Encoder extends AbstractEncoder {
     }
 
     /* (non-Javadoc)
-     * @see org.bcd4j.AbstractEncoder#encode(BigInteger)
+     * @see co.nstant.in.bcd4j.AbstractEncoder#encode(BigInteger)
      */
     @Override
     public final byte[] encode(final BigInteger value) {
