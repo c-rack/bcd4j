@@ -4,7 +4,7 @@
 	<groupId>co.nstant.in</groupId>
 	<artifactId>bcd4j</artifactId>
 	<name>BCD4J</name>
-	<version>1.2</version>
+	<version>1.3</version>
 	<description>Binary Coded Decimals (BCD) for Java</description>
 	<distributionManagement>
 		<site>
@@ -183,7 +183,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
