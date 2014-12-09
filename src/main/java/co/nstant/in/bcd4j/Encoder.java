@@ -16,7 +16,6 @@
 package co.nstant.in.bcd4j;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 
 /**
  * Encodes a number to its BCD (binary coded digit) representation.
@@ -38,7 +37,7 @@ class Encoder extends AbstractEncoder {
     @Override
     public final byte[] encode(final BigInteger value) {
         encodeBigIntegerToDigits(value);
-        bcd = allocateByteArray(digits.length);
+        bcd = new byte[Math.max(getPadding(), digits.length)];
         encodeDigitsToBcd();
         return bcd;
     }
@@ -71,17 +70,6 @@ class Encoder extends AbstractEncoder {
         if ((getPadding() > 0) && (getPadding() < numberOfDigits)) {
             throw new IllegalArgumentException("value exceeds padding");
         }
-    }
-
-    /**
-     * Allocates a byte array and fills it with zeros.
-     * @param size the size of the array
-     * @return a byte array filled with zeros.
-     */
-    private byte[] allocateByteArray(final int size) {
-        bcd = new byte[Math.max(getPadding(), size)];
-        Arrays.fill(bcd, (byte) 0);
-        return bcd;
     }
 
     /**
