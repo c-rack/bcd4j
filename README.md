@@ -12,7 +12,7 @@ This library provides only two public classes:
 [BCD](https://github.com/c-rack/bcd4j/blob/master/src/main/java/co/nstant/in/bcd4j/BCD.java)
 and
 [PackedBCD](https://github.com/c-rack/bcd4j/blob/master/src/main/java/co/nstant/in/bcd4j/PackedBCD.java).
-Internally, this library consists of 7 more private classes, as shown here:
+Internally, these two public classes are based on seven private classes, as shown here:
 
 ![Architecture](https://github.com/c-rack/bcd4j/blob/master/design.png)
 
