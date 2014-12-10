@@ -22,8 +22,6 @@ import java.math.BigInteger;
 import org.junit.Before;
 import org.junit.Test;
 
-import co.nstant.in.bcd4j.Decoder;
-
 /**
  * The Class BinaryCodedDecimalDecoderTest.
  * 
@@ -51,8 +49,12 @@ public class BinaryCodedDecimalDecoderTest {
                         bcdDecoder.decodeAsString(new byte[] { 0 }));
         assertEquals("1",
                         bcdDecoder.decodeAsString(new byte[] { 1 }));
+        assertEquals("9",
+                        bcdDecoder.decodeAsString(new byte[] { 9 }));
         assertEquals("12",
                         bcdDecoder.decodeAsString(new byte[] { 1, 2 }));
+        assertEquals("99",
+                        bcdDecoder.decodeAsString(new byte[] { 9, 9 }));
         assertEquals("123",
                         bcdDecoder.decodeAsString(new byte[] { 1, 2, 3 }));
         assertEquals("1234",
@@ -75,6 +77,14 @@ public class BinaryCodedDecimalDecoderTest {
     @Test(expected = IllegalArgumentException.class)
     public void testDecodeAsStringWithIllegalArgument2() {
         bcdDecoder.decodeAsString(new byte[] { 2, 4, 6, 8, -1 });
+    }
+
+    /**
+     * Test method for {@link co.nstant.in.bcd4j.Decoder#decodeAsString(byte[])}.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testDecodeAsStringWithIllegalArgument3() {
+        bcdDecoder.decodeAsString(new byte[] { 10 });
     }
 
     /**

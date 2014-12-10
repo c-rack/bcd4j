@@ -52,6 +52,7 @@ class PackedEncoder extends AbstractEncoder {
      * Pack two each bytes in one byte of the result array.
      */
     private void pack() {
+        packedBcd[0] = bcd[0];
         for (int i = alignFirstByte(), j = i; j < bcd.length; j += 2) {
             packedBcd[i] = (byte) (bcd[j] << BIT_SHIFT);
             packedBcd[i++] |= (byte) bcd[j + 1];
@@ -64,9 +65,6 @@ class PackedEncoder extends AbstractEncoder {
      * @param packedBcd the byte array to pack into.
      */
     private int alignFirstByte() {
-        if ((bcd.length & 1) == 1) {
-            packedBcd[0] = bcd[0];
-        }
         return (bcd.length & 1);
     }
 

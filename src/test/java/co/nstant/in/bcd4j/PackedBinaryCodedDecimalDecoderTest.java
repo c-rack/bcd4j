@@ -22,8 +22,6 @@ import java.math.BigInteger;
 import org.junit.Before;
 import org.junit.Test;
 
-import co.nstant.in.bcd4j.PackedDecoder;
-
 /**
  * The Class PackedBinaryCodedDecimalDecoderTest.
  */
@@ -84,7 +82,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues1() {
-        decoder.decode(new byte[] { 0x0F });
+        decoder.decode(new byte[] { 0x0A });
     }
 
     /**
@@ -92,7 +90,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues2() {
-        decoder.decode(new byte[] { (byte) 0xF0 });
+        decoder.decode(new byte[] { (byte) 0xA0 });
     }
 
     /**
@@ -100,7 +98,7 @@ public class PackedBinaryCodedDecimalDecoderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testDecodeIllegalByteValues3() {
-        decoder.decode(new byte[] { (byte) 0xFF });
+        decoder.decode(new byte[] { (byte) 0xAA });
     }
 
 }

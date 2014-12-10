@@ -15,14 +15,13 @@
  */
 package co.nstant.in.bcd4j;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.math.BigInteger;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import co.nstant.in.bcd4j.Encoder;
 
 /**
  * The Class BinaryCodedDecimalEncoderTest.

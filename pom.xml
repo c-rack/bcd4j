@@ -167,6 +167,11 @@
 					<targetTests>
 						<param>co.nstant.in.bcd4j.*</param>
 					</targetTests>
+					<mutators>
+						<mutator>ALL</mutator>
+					</mutators>
+					<timestampedReports>false</timestampedReports>
+					<exportLineCoverage>true</exportLineCoverage>
 				</configuration>
 			</plugin>
 		</plugins>

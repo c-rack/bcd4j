@@ -65,7 +65,10 @@ abstract class AbstractDecoder {
      * @param byteValue the byte to check.
      */
     private final void checkByteValue(final int byteValue) {
-        if ((byteValue < MIN_BYTE_VALUE) || (byteValue > MAX_BYTE_VALUE)) {
+        if (byteValue < MIN_BYTE_VALUE) {
+            throw new IllegalArgumentException("byte value out of range");
+        }
+        if (byteValue > MAX_BYTE_VALUE) {
             throw new IllegalArgumentException("byte value out of range");
         }
     }

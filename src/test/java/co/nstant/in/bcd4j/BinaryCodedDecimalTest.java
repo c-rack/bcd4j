@@ -60,4 +60,32 @@ public class BinaryCodedDecimalTest {
         }
     }
 
+    @Test
+    public void testEncodeDecodeAsString() {
+        BigInteger original;
+        BCD a;
+        BCD b;
+
+        for (long i = 0; i < 1000000; i++) {
+            original = BigInteger.valueOf(i);
+            a = new BCD(original, 8);
+            b = new BCD(a.toByteArray());
+            assertEquals(a.toString(), String.format("%08d", b.toBigInteger().intValue()));
+        }
+    }
+
+    @Test
+    public void testEncodeDecodeAsByteArray() {
+        BigInteger original;
+        BCD a;
+        BCD b;
+
+        for (long i = 0; i < 1000000; i++) {
+            original = BigInteger.valueOf(i);
+            a = new BCD(original);
+            b = new BCD(a.toByteArray());
+            assertEquals(a.toString(), b.toString());
+        }
+    }
+
 }
