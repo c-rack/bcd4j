@@ -8,6 +8,9 @@ It encodes and decodes both binary coded decimals and packed binary coded decima
 
 ## Architecture
 
+> Frustra fit per plura quod potest fieri per pauciora
+> &mdash; *[William of Ockham](https://en.wikipedia.org/wiki/Occam%27s_razor)*
+
 This library provides only two public classes:
 [BCD](https://github.com/c-rack/bcd4j/blob/master/src/main/java/co/nstant/in/bcd4j/BCD.java)
 and
