@@ -36,7 +36,7 @@ public final class BCD extends AbstractBCD {
      * @param value the BigInteger.
      */
     public BCD(final BigInteger value) {
-        super(value);
+        this(value, 0);
     }
 
     /**

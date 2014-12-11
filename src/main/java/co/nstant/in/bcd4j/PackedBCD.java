@@ -36,7 +36,7 @@ public final class PackedBCD extends AbstractBCD {
      * @param value the BigInteger.
      */
     public PackedBCD(final BigInteger value) {
-        super(value);
+        this(value, 0);
     }
 
     /**

@@ -42,16 +42,6 @@ abstract class AbstractBCD {
     }
 
     /**
-     * Constructor for BigInteger.
-     * @param value the value of this BCD as {@link java.math.BigInteger}.
-     */
-    public AbstractBCD(final BigInteger value) {
-        bigInteger = value;
-        byteArray = getEncoder(0).encode(bigInteger);
-        string = getDecoder().decodeAsString(byteArray);
-    }
-
-    /**
      * Constructor with padding.
      * @param value the value of this BCD as {@link java.math.BigInteger}.
      * @param padding the padding to use for this BCD.
