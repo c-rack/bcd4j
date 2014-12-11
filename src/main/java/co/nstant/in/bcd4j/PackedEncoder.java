@@ -25,7 +25,7 @@ class PackedEncoder extends AbstractEncoder {
     /** Number of bits to shift left to produce packed BCD format. */
     private static final int BIT_SHIFT = 4;
 
-    /** Temporary byte array */
+    /** Temporary byte array. */
     private transient byte[] packedBcd;
 
     /**
@@ -43,7 +43,7 @@ class PackedEncoder extends AbstractEncoder {
     @Override
     protected final byte[] encode(final BigInteger value) {
         bcd = new Encoder(getPadding()).encode(value);
-        packedBcd = new byte[(bcd.length >> 1) + (bcd.length & 1)];
+        packedBcd = new byte[(bcd.length & 1) + bcd.length >> 1];
         pack();
         return packedBcd.clone();
     }
@@ -53,19 +53,10 @@ class PackedEncoder extends AbstractEncoder {
      */
     private void pack() {
         packedBcd[0] = bcd[0];
-        for (int i = alignFirstByte(), j = i; j < bcd.length; j += 2) {
+        for (int i = bcd.length & 1, j = i; j < bcd.length; j += 2) {
             packedBcd[i] = (byte) (bcd[j] << BIT_SHIFT);
             packedBcd[i++] |= (byte) bcd[j + 1];
         }
-    }
-
-    /**
-     * Pad if number of bytes is odd.
-     * @param bcd the byte array to be packed.
-     * @param packedBcd the byte array to pack into.
-     */
-    private int alignFirstByte() {
-        return (bcd.length & 1);
     }
 
 }

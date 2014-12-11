@@ -22,13 +22,13 @@ import java.math.BigInteger;
  */
 abstract class AbstractBCD {
 
-    /** The BCD encoded byte array */
+    /** The BCD encoded byte array. */
     private final byte[] byteArray;
 
-    /** The BigInteger value of this decimal */
+    /** The BigInteger value of this decimal. */
     private final BigInteger bigInteger;
 
-    /** The String value of this string */
+    /** The String value of this string. */
     private final String string;
 
     /**
@@ -91,6 +91,7 @@ abstract class AbstractBCD {
 
     /**
      * Factory method to get an encoder.
+     * @param padding the padding to use
      * @return an {@link co.nstant.in.bcd4j.AbstractEncoder} for this BCD.
      */
     protected abstract AbstractEncoder getEncoder(final int padding);

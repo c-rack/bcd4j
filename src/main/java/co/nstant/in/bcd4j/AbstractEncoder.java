@@ -25,11 +25,8 @@ abstract class AbstractEncoder {
     /** The number of digits / bytes of the encoded result. */
     private transient int padding;
 
-    /** Temporary byte array */
+    /** Temporary byte array. */
     protected byte[] bcd;
-
-    /** Temporary char array */
-    protected char[] digits;
 
     /**
      * Getter method for padding.
@@ -61,7 +58,7 @@ abstract class AbstractEncoder {
 
     /**
      * Throws an exception if padding is negative.
-     * @param paddingDigits
+     * @param paddingDigits the number of digits to use for padding
      */
     private void paddingMustNotBeNegative(final int paddingDigits) {
         if (paddingDigits < 0) {

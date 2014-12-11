@@ -22,6 +22,9 @@ import java.math.BigInteger;
  */
 class Encoder extends AbstractEncoder {
 
+    /** Temporary char array. */
+    private char[] digits;
+
     /**
      * Constructor.
      * @param paddingDigits number of digits in encoded byte array
@@ -64,18 +67,16 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Throws an exception if padding is invalid.
-     * @param numberOfDigits
+     * @param numberOfDigits the number of digits to use for padding
      */
     private void checkPadding(final int numberOfDigits) {
-        if ((getPadding() > 0) && (getPadding() < numberOfDigits)) {
+        if (getPadding() > 0 && getPadding() < numberOfDigits) {
             throw new IllegalArgumentException("value exceeds padding");
         }
     }
 
     /**
      * Converts digits encoded as chars to a BCD encoded byte array.
-     * @param digits the char array to be encoded
-     * @param bcd the target byte array
      */
     private void encodeDigitsToBcd() {
         for (int i = 1; i <= digits.length; i++) {

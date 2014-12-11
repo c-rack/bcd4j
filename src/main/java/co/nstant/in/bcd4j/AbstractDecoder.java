@@ -28,10 +28,10 @@ abstract class AbstractDecoder {
     /** Maximal allowed byte value. */
     private static final int MAX_BYTE_VALUE = 9;
 
-    /** Temporary char array */
+    /** Temporary char array. */
     protected char[] chars;
 
-    /** Write index of temporary char array */
+    /** Write index of temporary char array. */
     protected int index;
 
     /**
@@ -64,7 +64,7 @@ abstract class AbstractDecoder {
      * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
      * @param byteValue the byte to check.
      */
-    private final void checkByteValue(final int byteValue) {
+    private void checkByteValue(final int byteValue) {
         if (byteValue < MIN_BYTE_VALUE) {
             throw new IllegalArgumentException("byte value out of range");
         }
