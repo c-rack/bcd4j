@@ -56,4 +56,18 @@ public class PackedBinaryCodedDecimalTest {
         }
     }
 
+    @Test
+    public void testEncodeDecodeAsByteArray() {
+        BigInteger original;
+        PackedBCD a;
+        PackedBCD b;
+
+        for (long i = 0; i < 1000000; i++) {
+            original = BigInteger.valueOf(i);
+            a = new PackedBCD(original);
+            b = new PackedBCD(a.toByteArray());
+            assertEquals(a.toString(), b.toString());
+        }
+    }
+
 }
