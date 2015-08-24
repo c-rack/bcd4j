@@ -18,7 +18,7 @@
         <jdk.version>1.5</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.cobertura-maven-plugin>2.7</version.cobertura-maven-plugin>
-        <version.coveralls-maven-plugin>3.1.0</version.coveralls-maven-plugin>
+        <version.coveralls-maven-plugin>3.2.0</version.coveralls-maven-plugin>
         <version.findbugs-maven-plugin>2.3.1</version.findbugs-maven-plugin>
         <version.junit>4.12</version.junit>
         <version.maven-checkstyle-plugin>2.6</version.maven-checkstyle-plugin>
