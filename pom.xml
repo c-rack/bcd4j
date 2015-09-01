@@ -33,7 +33,7 @@
         <version.pitest-maven>1.1.6</version.pitest-maven>
 	</properties>
 	<issueManagement>
-		<url>https://code.google.com/p/bcd4j/issues/list</url>
+		<url>https://github.com/c-rack/bcd4j/issues</url>
 	</issueManagement>
 	<developers>
 		<developer>
