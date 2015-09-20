@@ -1,7 +1,7 @@
 # bcd4j
 
-BCD4J implements [binary coded decimals](http://en.wikipedia.org/wiki/Binary-coded_decimal) in Java.
-It encodes and decodes both binary coded decimals and packed binary coded decimals.
+[Binary coded decimals](http://en.wikipedia.org/wiki/Binary-coded_decimal) (BCD) in Java.
+Both binary coded decimals and packed binary coded decimals are supported.
 
 [![Build Status](https://travis-ci.org/c-rack/bcd4j.svg?branch=master)](https://travis-ci.org/c-rack/bcd4j)
 [![Coverage Status](https://coveralls.io/repos/c-rack/bcd4j/badge.svg?branch=master&service=github)](https://coveralls.io/github/c-rack/bcd4j?branch=master)
