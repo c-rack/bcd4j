@@ -1,4 +1,6 @@
 language: java
 
+sudo: false
+
 after_success:
 - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
