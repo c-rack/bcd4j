@@ -22,7 +22,7 @@
         <version.findbugs-maven-plugin>2.3.1</version.findbugs-maven-plugin>
         <version.junit>4.12</version.junit>
         <version.maven-checkstyle-plugin>2.6</version.maven-checkstyle-plugin>
-        <version.maven-compiler-plugin>3.3</version.maven-compiler-plugin>
+        <version.maven-compiler-plugin>3.5</version.maven-compiler-plugin>
         <version.maven-javadoc-plugin>2.10.3</version.maven-javadoc-plugin>
         <version.maven-jxr-plugin>2.5</version.maven-jxr-plugin>
         <version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
@@ -30,7 +30,7 @@
         <version.maven-shade-plugin>2.4.3</version.maven-shade-plugin>
         <version.maven-site-plugin>3.4</version.maven-site-plugin>
         <version.maven-surefire-report-plugin>2.19.1</version.maven-surefire-report-plugin>
-        <version.pitest-maven>1.1.8</version.pitest-maven>
+        <version.pitest-maven>1.1.9</version.pitest-maven>
 	</properties>
 	<issueManagement>
 		<url>https://github.com/c-rack/bcd4j/issues</url>
