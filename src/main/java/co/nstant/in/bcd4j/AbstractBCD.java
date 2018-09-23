@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ abstract class AbstractBCD {
 
     /**
      * Constructor for encoded byte array.
-     * @param value the value of this BCD as encoded as byte array.
+     * 
+     * @param value
+     *            the value of this BCD as encoded as byte array.
      */
     public AbstractBCD(final byte[] value) {
         byteArray = value.clone();
@@ -43,8 +45,11 @@ abstract class AbstractBCD {
 
     /**
      * Constructor with padding.
-     * @param value the value of this BCD as {@link java.math.BigInteger}.
-     * @param padding the padding to use for this BCD.
+     * 
+     * @param value
+     *            the value of this BCD as {@link java.math.BigInteger}.
+     * @param padding
+     *            the padding to use for this BCD.
      */
     public AbstractBCD(final BigInteger value, final int padding) {
         bigInteger = value;
@@ -54,6 +59,7 @@ abstract class AbstractBCD {
 
     /**
      * Returns the BigInteger representation of this binary coded decimal.
+     * 
      * @return a {@link java.math.BigInteger} with the value of this BCD.
      */
     public final BigInteger toBigInteger() {
@@ -62,6 +68,7 @@ abstract class AbstractBCD {
 
     /**
      * Returns the byte representation of this binary coded decimal.
+     * 
      * @return a byte array representing this BCD in encoded form.
      */
     public final byte[] toByteArray() {
@@ -75,13 +82,16 @@ abstract class AbstractBCD {
 
     /**
      * Factory method to get a decoder.
+     * 
      * @return an {@link co.nstant.in.bcd4j.AbstractDecoder} for this BCD.
      */
     protected abstract AbstractDecoder getDecoder();
 
     /**
      * Factory method to get an encoder.
-     * @param padding the padding to use
+     * 
+     * @param padding
+     *            the padding to use
      * @return an {@link co.nstant.in.bcd4j.AbstractEncoder} for this BCD.
      */
     protected abstract AbstractEncoder getEncoder(final int padding);

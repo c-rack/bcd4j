@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,9 @@ package co.nstant.in.bcd4j;
  */
 class Decoder extends AbstractDecoder {
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */
     @Override
@@ -33,7 +35,9 @@ class Decoder extends AbstractDecoder {
 
     /**
      * Decodes a BCD encoded byte array to a char array.
-     * @param bytes the byte array to decode.
+     * 
+     * @param bytes
+     *            the byte array to decode.
      */
     private void decodeBytes(final byte[] bytes) {
         for (byte value : bytes) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,14 +36,18 @@ abstract class AbstractDecoder {
 
     /**
      * Decode a BCD byte array as {@link java.lang.String}.
-     * @param bytes the bytes
+     * 
+     * @param bytes
+     *            the bytes
      * @return the decoded value as string
      */
     protected abstract String decodeAsString(final byte[] bytes);
 
     /**
      * Decode a BCD byte array as {@link java.math.BigInteger}.
-     * @param bytes the bytes
+     * 
+     * @param bytes
+     *            the bytes
      * @return the decoded value as big integer
      */
     protected final BigInteger decode(final byte[] bytes) {
@@ -52,7 +56,9 @@ abstract class AbstractDecoder {
 
     /**
      * Validate and convert a byte value to char.
-     * @param byteValue the byte to convert
+     * 
+     * @param byteValue
+     *            the byte to convert
      * @return the byte value as char
      */
     protected final char byteAsChar(final int byteValue) {
@@ -62,7 +68,9 @@ abstract class AbstractDecoder {
 
     /**
      * Checks if byteValue is valid, i.e. 0 <= byteValue <= 9.
-     * @param byteValue the byte to check.
+     * 
+     * @param byteValue
+     *            the byte to check.
      */
     private void checkByteValue(final int byteValue) {
         if (byteValue < MIN_BYTE_VALUE) {

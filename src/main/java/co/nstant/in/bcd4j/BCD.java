@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,16 @@ import java.math.BigInteger;
 
 /**
  * Represents a Binary Coded Decimal (BCD).
+ * 
  * @author Constantin Rack
  */
 public final class BCD extends AbstractBCD {
 
     /**
      * Constructs a BCD from a byte array.
-     * @param value the byte array
+     * 
+     * @param value
+     *            the byte array
      */
     public BCD(final byte[] value) {
         super(value);
@@ -33,7 +36,9 @@ public final class BCD extends AbstractBCD {
 
     /**
      * Constructs a BCD from a {@link java.math.BigInteger}.
-     * @param value the BigInteger.
+     * 
+     * @param value
+     *            the BigInteger.
      */
     public BCD(final BigInteger value) {
         this(value, 0);
@@ -41,14 +46,19 @@ public final class BCD extends AbstractBCD {
 
     /**
      * Constructs a BCD from a {@link java.math.BigInteger} with padding.
-     * @param value the BigInteger.
-     * @param padding total number of digits of this BCD.
+     * 
+     * @param value
+     *            the BigInteger.
+     * @param padding
+     *            total number of digits of this BCD.
      */
     public BCD(final BigInteger value, final int padding) {
         super(value, padding);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractBCD#getDecoder()
      */
     @Override
@@ -56,7 +66,9 @@ public final class BCD extends AbstractBCD {
         return new Decoder();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractBCD#getEncoder(int)
      */
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack
+ * Copyright 2010-2018 Constantin Rack
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ public class BinaryCodedDecimalEncoderTest {
     public void testSetPadding() {
         bcdEncoder.setPadding(6);
         assertArrayEquals(new byte[] { 0, 0, 0, 0, 0, 0 },
-                        bcdEncoder.encode(i0));
+                bcdEncoder.encode(i0));
         assertArrayEquals(new byte[] { 0, 0, 0, 0, 0, 1 },
-                        bcdEncoder.encode(i1));
+                bcdEncoder.encode(i1));
         assertArrayEquals(new byte[] { 0, 0, 0, 0, 1, 2 },
-                        bcdEncoder.encode(i12));
+                bcdEncoder.encode(i12));
         assertArrayEquals(new byte[] { 0, 0, 0, 1, 2, 3 },
-                        bcdEncoder.encode(i123));
+                bcdEncoder.encode(i123));
         assertArrayEquals(new byte[] { 0, 0, 1, 2, 3, 4 },
-                        bcdEncoder.encode(i1234));
+                bcdEncoder.encode(i1234));
     }
 
     /**
@@ -120,7 +120,7 @@ public class BinaryCodedDecimalEncoderTest {
     @Test
     public void testEncodeBigInteger() {
         assertArrayEquals(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2 },
-                        bcdEncoder.encode(new BigInteger("123456789012")));
+                bcdEncoder.encode(new BigInteger("123456789012")));
     }
 
 }

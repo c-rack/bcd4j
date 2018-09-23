@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ class PackedDecoder extends AbstractDecoder {
     /** Bit mask to get only the lowest four bits of a byte. */
     private static final byte BIT_MASK = 0x0F;
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractDecoder#decodeAsString(byte[])
      */
     @Override
@@ -39,7 +41,9 @@ class PackedDecoder extends AbstractDecoder {
 
     /**
      * Unpacks byte array values to char array.
-     * @param bytes the byte array to decode
+     * 
+     * @param bytes
+     *            the byte array to decode
      */
     private void decodeBytes(final byte[] bytes) {
         for (byte value : bytes) {

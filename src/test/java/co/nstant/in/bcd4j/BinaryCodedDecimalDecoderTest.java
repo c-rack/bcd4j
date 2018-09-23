@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack
+ * Copyright 2010-2018 Constantin Rack
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,21 +46,21 @@ public class BinaryCodedDecimalDecoderTest {
     @Test
     public void testDecodeAsString() {
         assertEquals("0",
-                        bcdDecoder.decodeAsString(new byte[] { 0 }));
+                bcdDecoder.decodeAsString(new byte[] { 0 }));
         assertEquals("1",
-                        bcdDecoder.decodeAsString(new byte[] { 1 }));
+                bcdDecoder.decodeAsString(new byte[] { 1 }));
         assertEquals("9",
-                        bcdDecoder.decodeAsString(new byte[] { 9 }));
+                bcdDecoder.decodeAsString(new byte[] { 9 }));
         assertEquals("12",
-                        bcdDecoder.decodeAsString(new byte[] { 1, 2 }));
+                bcdDecoder.decodeAsString(new byte[] { 1, 2 }));
         assertEquals("99",
-                        bcdDecoder.decodeAsString(new byte[] { 9, 9 }));
+                bcdDecoder.decodeAsString(new byte[] { 9, 9 }));
         assertEquals("123",
-                        bcdDecoder.decodeAsString(new byte[] { 1, 2, 3 }));
+                bcdDecoder.decodeAsString(new byte[] { 1, 2, 3 }));
         assertEquals("1234",
-                        bcdDecoder.decodeAsString(new byte[] { 1, 2, 3, 4 }));
+                bcdDecoder.decodeAsString(new byte[] { 1, 2, 3, 4 }));
         assertEquals("00123",
-                        bcdDecoder.decodeAsString(new byte[] { 0, 0, 1, 2, 3 }));
+                bcdDecoder.decodeAsString(new byte[] { 0, 0, 1, 2, 3 }));
     }
 
     /**
@@ -93,17 +93,17 @@ public class BinaryCodedDecimalDecoderTest {
     @Test
     public void testDecode() {
         assertEquals(BigInteger.valueOf(0),
-                        bcdDecoder.decode(new byte[] { 0 }));
+                bcdDecoder.decode(new byte[] { 0 }));
         assertEquals(BigInteger.valueOf(1),
-                        bcdDecoder.decode(new byte[] { 1 }));
+                bcdDecoder.decode(new byte[] { 1 }));
         assertEquals(BigInteger.valueOf(12),
-                        bcdDecoder.decode(new byte[] { 1, 2 }));
+                bcdDecoder.decode(new byte[] { 1, 2 }));
         assertEquals(BigInteger.valueOf(123),
-                        bcdDecoder.decode(new byte[] { 1, 2, 3 }));
+                bcdDecoder.decode(new byte[] { 1, 2, 3 }));
         assertEquals(BigInteger.valueOf(1234),
-                        bcdDecoder.decode(new byte[] { 1, 2, 3, 4 }));
+                bcdDecoder.decode(new byte[] { 1, 2, 3, 4 }));
         assertEquals(BigInteger.valueOf(123),
-                        bcdDecoder.decode(new byte[] { 0, 0, 1, 2, 3 }));
+                bcdDecoder.decode(new byte[] { 0, 0, 1, 2, 3 }));
     }
 
     /**

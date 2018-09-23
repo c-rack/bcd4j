@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,14 +27,18 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Constructor.
-     * @param paddingDigits number of digits in encoded byte array
+     * 
+     * @param paddingDigits
+     *            number of digits in encoded byte array
      */
     public Encoder(final int paddingDigits) {
         super();
         setPadding(paddingDigits);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractEncoder#encode(BigInteger)
      */
     @Override
@@ -47,7 +51,9 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Converts a BigInteger value to char array.
-     * @param value the BigInteger value
+     * 
+     * @param value
+     *            the BigInteger value
      */
     private void encodeBigIntegerToDigits(final BigInteger value) {
         checkValue(value);
@@ -57,7 +63,9 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Verifies that value is not negative.
-     * @param value the value to be checked.
+     * 
+     * @param value
+     *            the value to be checked.
      */
     private void checkValue(final BigInteger value) {
         if (value.signum() == -1) {
@@ -67,7 +75,9 @@ class Encoder extends AbstractEncoder {
 
     /**
      * Throws an exception if padding is invalid.
-     * @param numberOfDigits the number of digits to use for padding
+     * 
+     * @param numberOfDigits
+     *            the number of digits to use for padding
      */
     private void checkPadding(final int numberOfDigits) {
         if (getPadding() > 0 && getPadding() < numberOfDigits) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,4 +18,3 @@
  * This library implements binary-coded decimals (BCD and PackedBCD) in Java.
  */
 package co.nstant.in.bcd4j;
-

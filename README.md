@@ -5,7 +5,6 @@ Both binary coded decimals and packed binary coded decimals are supported.
 
 [![Build Status](https://travis-ci.org/c-rack/bcd4j.svg?branch=master)](https://travis-ci.org/c-rack/bcd4j)
 [![Coverage Status](https://coveralls.io/repos/c-rack/bcd4j/badge.svg?branch=master&service=github)](https://coveralls.io/github/c-rack/bcd4j?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/555e278e634daa5dc8000f4b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/555e278e634daa5dc8000f4b)
 
 ## Architecture
 
@@ -22,7 +21,7 @@ Internally, these two public classes are based on seven private classes, as show
 
 ## License
 
-> Copyright 2010-2016 Constantin Rack
+> Copyright 2010-2018 Constantin Rack
 > 
 > Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 >

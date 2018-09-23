@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ abstract class AbstractEncoder {
 
     /**
      * Getter method for padding.
+     * 
      * @return the number of digits / bytes of the encoded result.
      */
     protected final int getPadding() {
@@ -39,7 +40,9 @@ abstract class AbstractEncoder {
     /**
      * Encodes a value to its BCD representation. Uses left zero padding if
      * padding is set by {@link Encoder#setPadding(int)}.
-     * @param value the value to be encoded
+     * 
+     * @param value
+     *            the value to be encoded
      * @return byte array with the BCD representation of value
      */
     protected abstract byte[] encode(final BigInteger value);
@@ -47,9 +50,10 @@ abstract class AbstractEncoder {
     /**
      * Use this to automatically add zeros in front of the value during
      * encoding to get the desired number of bytes.
+     * 
      * @param paddingDigits
-     *                number of digits in encoded byte array. If 0 (default),
-     *                padding is off.
+     *            number of digits in encoded byte array. If 0 (default),
+     *            padding is off.
      */
     protected final void setPadding(final int paddingDigits) {
         paddingMustNotBeNegative(paddingDigits);
@@ -58,7 +62,9 @@ abstract class AbstractEncoder {
 
     /**
      * Throws an exception if padding is negative.
-     * @param paddingDigits the number of digits to use for padding
+     * 
+     * @param paddingDigits
+     *            the number of digits to use for padding
      */
     private void paddingMustNotBeNegative(final int paddingDigits) {
         if (paddingDigits < 0) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Constantin Rack.
+ * Copyright 2010-2018 Constantin Rack.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,14 +30,18 @@ class PackedEncoder extends AbstractEncoder {
 
     /**
      * Constructs an PackedBCD encoder.
-     * @param paddingDigits number of digits in encoded byte array.
+     * 
+     * @param paddingDigits
+     *            number of digits in encoded byte array.
      */
     public PackedEncoder(final int paddingDigits) {
         super();
         setPadding(paddingDigits);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see co.nstant.in.bcd4j.AbstractEncoder#encode(java.math.BigInteger)
      */
     @Override
@@ -55,7 +59,7 @@ class PackedEncoder extends AbstractEncoder {
         packedBcd[0] = bcd[0];
         for (int i = bcd.length & 1, j = i; j < bcd.length; j += 2) {
             packedBcd[i] = (byte) (bcd[j] << BIT_SHIFT);
-            packedBcd[i++] |= (byte) bcd[j + 1];
+            packedBcd[i++] |= bcd[j + 1];
         }
     }
 
