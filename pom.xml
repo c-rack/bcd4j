@@ -15,7 +15,7 @@
 		</site>
 	</distributionManagement>
 	<properties>
-        <jdk.version>1.5</jdk.version>
+        <jdk.version>1.6</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.cobertura-maven-plugin>2.7</version.cobertura-maven-plugin>
         <version.coveralls-maven-plugin>4.3.0</version.coveralls-maven-plugin>
