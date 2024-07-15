@@ -24,7 +24,7 @@
         <version.maven-checkstyle-plugin>2.6</version.maven-checkstyle-plugin>
         <version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
         <version.maven-javadoc-plugin>3.6.3</version.maven-javadoc-plugin>
-        <version.maven-pmd-plugin>3.22.0</version.maven-pmd-plugin>
+        <version.maven-pmd-plugin>3.24.0</version.maven-pmd-plugin>
         <version.maven-jxr-plugin>3.3.2</version.maven-jxr-plugin>
         <version.maven-project-info-reports-plugin>3.5.0</version.maven-project-info-reports-plugin>
         <version.maven-shade-plugin>3.5.3</version.maven-shade-plugin>
