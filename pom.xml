@@ -23,7 +23,7 @@
         <version.junit>4.13.2</version.junit>
         <version.maven-checkstyle-plugin>2.6</version.maven-checkstyle-plugin>
         <version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
-        <version.maven-javadoc-plugin>3.10.0</version.maven-javadoc-plugin>
+        <version.maven-javadoc-plugin>3.11.1</version.maven-javadoc-plugin>
         <version.maven-pmd-plugin>3.22.0</version.maven-pmd-plugin>
         <version.maven-jxr-plugin>3.5.0</version.maven-jxr-plugin>
         <version.maven-project-info-reports-plugin>3.5.0</version.maven-project-info-reports-plugin>
